@@ -17,8 +17,13 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAuthorController;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(Book $book, User $user, Volume $volume, Borrow $borrow){
+    return view('dashboard', [
+        'book' => $book,
+        'user' => $user,
+        'volume' => $volume,
+        'borrow' => $borrow
+    ]);
 });
 
 Route::get('/test', function(Book $book, User $user, Volume $volume, Borrow $borrow){
