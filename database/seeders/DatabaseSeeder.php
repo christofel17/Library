@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Book;
 use App\Models\User;
 use App\Models\Author;
-use App\Models\Book;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Borrow;
+use App\Models\Volume;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -33,6 +35,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Book::factory(6)->create();
+
+        Volume::factory(10)->create();
+
+        Borrow::factory(10)->create();
         
         /*
         Book::create([

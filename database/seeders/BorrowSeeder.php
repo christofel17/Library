@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Borrow;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BorrowSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class BorrowSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Borrow::factory(20)->create();
     }
 }

@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('volumes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('book_id');
+            $table->string('format');
+            $table->string('edition');
+            $table->string('state');
         });
     }
 
