@@ -5,6 +5,7 @@ use App\Models\Book;
 use App\Models\Author;
 use App\Models\Volume;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -21,8 +22,14 @@ class BookController extends Controller
                 ->addColumn('author_slug',function(Book $book){
                     return empty ($book->author->slug) ? $book->author_id : $book->author->slug;})
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="/edit/books/'. $row->slug .'" class="edit btn btn-success btn-sm">Edit</a> <a href="/delete/books/'. $row->slug .'" class="delete btn btn-danger btn-sm">Delete</a>';
-                    return $actionBtn;
+                    $actionBtn = null;
+                    if((Auth::check()) != null){
+                        if(auth()->user()->is_admin === 1){
+                            $actionBtn = 
+                            '<a href="/edit/books/'. $row->slug .'" class="edit btn btn-success btn-sm">Edit</a> <a href="/delete/books/'. $row->slug .'" class="delete btn btn-danger btn-sm">Delete</a>';
+                            return $actionBtn;
+                        }
+                    }
                 })
                 ->addColumn('stock',function(Book $book){
                     $total = Volume::all()->where('book_id', $book->id)->count();
@@ -53,7 +60,13 @@ class BookController extends Controller
                 ->addColumn('author_slug',function(Book $book){
                     return empty ($book->author->slug) ? $book->author_id : $book->author->slug;})
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    $actionBtn = null;
+                    if((Auth::check()) != null){
+                        if(auth()->user()->is_admin === 1){
+                            $actionBtn = 
+                            '<a href="/edit/books/'. $row->slug .'" class="edit btn btn-success btn-sm">Edit</a> <a href="/delete/books/'. $row->slug .'" class="delete btn btn-danger btn-sm">Delete</a>';
+                        }
+                    }
                     return $actionBtn;
                 })
                 ->addColumn('stock',function(Book $book){

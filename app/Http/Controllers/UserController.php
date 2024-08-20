@@ -43,12 +43,15 @@ class UserController extends Controller
         $rules = [
             'name' => 'required|max:255',
             // dns supaya domainnya benar
-            'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255'
         ];
 
         if($request->username != $user->username) {
-            $rules['username'] = 'required|unique:posts';
+            $rules['username'] = 'required|unique:users';
+        }
+
+        if($request->email != $user->email) {
+            $rules['email'] = 'required|email:dns|unique:users';
         }
 
         $validatedData = $request->validate($rules);
