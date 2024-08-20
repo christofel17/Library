@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="{{ asset('js/app.js') }}"></script>
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Dashboard</title>
 
 @include('style.stylesheet')
 
