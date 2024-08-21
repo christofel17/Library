@@ -3,9 +3,11 @@
 @include('partials.navbar')
 @include('partials.sidebar')
 <body>
-     
+  @include('partials.bubble')
   <div class="container">
-      <h1>Histori Peminjaman Buku {{ $volume->book->title }} ({{ $volume->format }}) id: {{ $volume->id }}</h1>
+    <div class="col-sm-6">
+      <h1 class="m-0">Histori Peminjaman Buku {{ $volume->book->title }} ({{ $volume->format }}) id: {{ $volume->id }}</h1>
+    </div>
       <a href="/borrow/create/{{ $volume->id }}" class="btn btn-success btn-sm">Apply</a>
       <table class="table table-bordered data-table">
           <thead>

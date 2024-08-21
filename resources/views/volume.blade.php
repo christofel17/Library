@@ -3,9 +3,11 @@
 @include('partials.navbar')
 @include('partials.sidebar')
 <body>
-     
+  @include('partials.dust')
   <div class="container">
-      <h1>Daftar Volume dari Buku "{{ $book->title }}"</h1>
+    <div class="col-sm-6">
+      <h1 class="m-0">Daftar Volume dari Buku "{{ $book->title }}"</h1>
+    </div>
       @can('admin')
       <a href="/volume/create/{{ $book->slug }}" class="btn btn-success btn-sm">Add volume</a>
       @endcan

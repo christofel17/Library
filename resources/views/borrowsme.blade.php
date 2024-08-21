@@ -3,9 +3,11 @@
 @include('partials.navbar')
 @include('partials.sidebar')
 <body>
-     
+  @include('partials.bubble')
   <div class="container">
-      <h1>Daftar Peminjaman Saya</h1>
+    <div class="col-sm-6">
+      <h1 class="m-0">Daftar Peminjaman Saya</h1>
+    </div>
       <table class="table table-bordered data-table">
           <thead>
               <tr>

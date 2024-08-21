@@ -3,8 +3,11 @@
 @include('partials.navbar')
 @include('partials.sidebar')
 <body>
+  @include('partials.particles')
     <div class="container">
-      <h1>Daftar Buku</h1>
+        <div class="col-sm-6">
+          <h1 class="m-0">Daftar Buku</h1>
+        </div>
       @can('admin')
       <a href="/create/books" class="btn btn-success btn-sm">Add book</a>
       @endcan

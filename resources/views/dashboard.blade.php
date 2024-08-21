@@ -20,7 +20,6 @@ selama ada extends layout.main -->
     <!-- Main content -->
     <section class="content">
       @include('partials.particles')
-      <lottie-player id="firstLottie" src="{{ asset('system-solid-39-trash.json')}}" background="transparent" hover=true count="1"  speed="1"  style="width: 20px; height: 20px;" loop></lottie-player>
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-lg-3 col-6">

@@ -3,9 +3,11 @@
 @include('partials.navbar')
 @include('partials.sidebar')
 <body>
-     
+   @include('partials.particles')
   <div class="container">
-      <h1>Daftar User</h1>
+    <div class="col-sm-6">
+        <h1 class="m-0">Daftar User</h1>
+      </div>
       <a href="/users/create" class="btn btn-success btn-sm">Add user</a>
       <table class="table table-bordered data-table">
           <thead>
