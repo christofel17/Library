@@ -25,7 +25,8 @@
       <!-- Navbar Search -->
       <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
+          <lottie-player id="firstLottie" src="{{ asset('system-solid-42-search (1).json')}}" background="transparent" count="1"  speed="1" hover="true" style="width: 20px; height: 20px;" loop></lottie-player>
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </a>
         <div class="navbar-search-block">
           <form class="form-inline">
